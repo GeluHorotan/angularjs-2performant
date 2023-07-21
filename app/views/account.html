@@ -1,21 +1,25 @@
-<div ng-controller="AccountController" class="flex justify-center items-center">
+<div
+  ng-controller="AccountController"
+  class="flex justify-center items-end py-7 h-screen"
+>
   <div
-    class="shadow-2xl p-7 rounded-xl flex items-center justify-center flex-col gap-8"
+    class="shadow-2xl p-7 rounded-xl flex items-center justify-center flex-col gap-6"
   >
     <div
-      class="bg-gradient-to-r from-red-400 to-pink-600 rounded-xl p-7 flex items-center justify-center flex-col gap-8"
+      class="bg-gradient-to-r from-red-400 to-pink-600 rounded-xl p-14 flex items-center justify-center flex-col gap-6"
     >
-      <h1>Account</h1>
+      <h1 class="text-3xl">Account</h1>
       <img ng-src="{{ user.avatar_url }}" class="rounded-xl" alt="User Image" />
+      <div class="flex flex-col items-center justify-center gap-2">
+        <div class="flex gap-2 items-center justify-center">
+          <i class="fas fa-user"></i>
+          <p>{{user.login}}</p>
+        </div>
 
-      <div class="flex gap-2 items-center justify-center">
-        <i class="fas fa-user"></i>
-        <p>{{user.login}}</p>
-      </div>
-
-      <div class="flex gap-2 items-center justify-center">
-        <i class="fas fa-envelope"></i>
-        <p>{{user.email}}</p>
+        <div class="flex gap-2 items-center justify-center">
+          <i class="fas fa-envelope"></i>
+          <p>{{user.email}}</p>
+        </div>
       </div>
     </div>
 
@@ -49,7 +53,7 @@
 
     <button
       ng-click="logout()"
-      class="px-4 py-1 bg-blue-400 rounded-lg text-white hover:bg-red-400 transition-all duration-200 ease-in-out"
+      class="px-4 w-full py-2 bg-blue-400 rounded-lg text-white hover:bg-red-400 transition-all duration-200 ease-in-out"
     >
       Logout
     </button>

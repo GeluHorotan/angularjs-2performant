@@ -1,15 +1,39 @@
-<div ng-controller="LoginController">
-  <h1>Login</h1>
-  <form ng-submit="login()">
-    <label>Email:</label>
-    <input type="email" ng-model="user.email" required />
+<div
+  ng-controller="LoginController"
+  class="flex justify-center items-center h-screen"
+>
+  <div
+    class="shadow-2xl p-7 rounded-xl flex items-center justify-center flex-col gap-6"
+  >
+    <h1 class="text-3xl font-bold">Login</h1>
+    <form ng-submit="login()" class="flex flex-col gap-4">
+      <label class="text-xl">Email:</label>
+      <input
+        type="email"
+        ng-model="user.email"
+        required
+        class="px-4 py-2 border rounded-lg"
+      />
 
-    <label>Password:</label>
-    <input type="password" ng-model="user.password" required />
-    <label>
-      <input type="checkbox" ng-model="rememberMe" />
-      Remember Me
-    </label>
-    <button type="submit">Login</button>
-  </form>
+      <label class="text-xl">Password:</label>
+      <input
+        type="password"
+        ng-model="user.password"
+        required
+        class="px-4 py-2 border rounded-lg"
+      />
+
+      <label class="flex items-center">
+        <input type="checkbox" ng-model="rememberMe" class="mr-2" />
+        Remember Me
+      </label>
+
+      <button
+        type="submit"
+        class="px-4 py-2 bg-blue-400 rounded-lg text-white hover:bg-red-400 transition-all duration-200 ease-in-out"
+      >
+        Login
+      </button>
+    </form>
+  </div>
 </div>

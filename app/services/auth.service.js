@@ -45,7 +45,7 @@ angular.module("app").factory("AuthService", function () {
     },
     logout: function () {
       userState.user = null;
-      saveUserState();
+      clearUserState();
     },
     loadState: loadUserState,
     clearState: clearUserState,
