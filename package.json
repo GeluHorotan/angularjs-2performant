@@ -1,0 +1,17 @@
+{
+  "name": "angularjs-2performant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.0",
+    "angular-route": "^1.8.0",
+    "lite-server": "^2.6.1"
+  }
+}
