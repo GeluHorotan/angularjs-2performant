@@ -1,6 +1,14 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.test {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CradialGradient id=%22b%22 r=%22100%25%22 cx=%2250%25%22 cy=%2250%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FFE53B%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23FF2525%22%2F%3E%3C%2FradialGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M777.5 691.5Q721 883 519 850.5T183.5 659Q50 500 163.5 306.5t330.5-183Q711 134 772.5 317t5 374.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M777.5 691.5Q721 883 519 850.5T183.5 659Q50 500 163.5 306.5t330.5-183Q711 134 772.5 317t5 374.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
 
 li {
   font-size: 1rem;
