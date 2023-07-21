@@ -5,18 +5,23 @@
   "main": "app/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "lite-server"
+    "server": "concurrently \"lite-server\" \"node server.js\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.8.0",
     "angular-route": "^1.8.0",
+    "cors": "^2.8.5",
+    "cors-anywhere": "^0.4.4",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
     "lite-server": "^2.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
+    "concurrently": "^8.2.0",
     "husky": "^8.0.3"
   }
 }

@@ -9,7 +9,7 @@ angular
     $scope.login = function () {
       $http({
         method: "POST",
-        url: "https://api.2performant.com/users/sign_in.json",
+        url: "http://localhost:5000/api/users/sign_in.json",
         data: {
           user: {
             email: $scope.user.email,
