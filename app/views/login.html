@@ -1,0 +1,12 @@
+<div ng-controller="LoginController">
+  <h1>Login</h1>
+  <form ng-submit="login()">
+    <label>Email:</label>
+    <input type="email" ng-model="user.email" required />
+
+    <label>Password:</label>
+    <input type="password" ng-model="user.password" required />
+
+    <button type="submit">Login</button>
+  </form>
+</div>
