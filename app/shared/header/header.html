@@ -1,5 +1,13 @@
-<nav>
-  <ul>
-    <li>AngularJS {{angularVersion}}</li>
+<nav class="bg-blue-400 px-14 py-4">
+  <ul class="flex items-center justify-between gap-20 uppercase">
+    <li>Angular.JS {{angularVersion}}</li>
+    <div class="flex gap-4">
+      <li ng-repeat="item in navItems">
+        <a ng-href="{{ item.link }}">{{ item.title }}</a>
+      </li>
+    </div>
+    <li>
+      <a ng-href="{{accountItem.link}}">{{accountItem.title}}</a>
+    </li>
   </ul>
 </nav>
