@@ -1,6 +1,6 @@
 <div ng-controller="AccountController" class="flex justify-center items-center">
   <div
-    class="shadow-2xl p-14 rounded-xl flex items-center justify-center flex-col gap-8"
+    class="shadow-2xl p-7 rounded-xl flex items-center justify-center flex-col gap-8"
   >
     <div
       class="bg-gradient-to-r from-red-400 to-pink-600 rounded-xl p-7 flex items-center justify-center flex-col gap-8"
@@ -18,16 +18,23 @@
         <p>{{user.email}}</p>
       </div>
     </div>
-    <div class="flex items-center justify-between w-full">
-      <div class="flex gap-2 items-center justify-center">
-        <i class="fas fa-flag"></i>
-        <p>{{ user.role.charAt(0) | uppercase }}{{ user.role.slice(1) }}</p>
-      </div>
-      <div class="flex gap-2 items-center justify-center">
-        <i class="fas fa-location-arrow"></i>
-        <p>{{user.user_info.country}}</p>
-      </div>
+
+    <div
+      class="bg-gradient-to-r from-red-400 to-pink-600 p-4 w-full bg-blue-400 rounded-lg flex items-center justify-center flex-col"
+    >
+      <h4>{{ currentTime.time }}</h4>
+      <p>{{ currentTime.date | date:'d MMMM yyyy' }}</p>
     </div>
+
+    <div class="flex gap-2 items-center justify-center">
+      <i class="fas fa-flag"></i>
+      <p>{{ user.role.charAt(0) | uppercase }}{{ user.role.slice(1) }}</p>
+    </div>
+    <div class="flex gap-2 items-center justify-center">
+      <i class="fas fa-location-arrow"></i>
+      <p>{{user.user_info.country}}</p>
+    </div>
+
     <div class="flex gap-2 items-center justify-center">
       <i class="fas fa-calendar-plus"></i>
       <p>
