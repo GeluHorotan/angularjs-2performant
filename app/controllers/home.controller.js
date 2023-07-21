@@ -1,5 +1,5 @@
 angular
-  .module("myApp")
+  .module("app")
   .controller("HomeController", function ($scope, $interval) {
     $scope.currentTime = new Date().toLocaleString();
 

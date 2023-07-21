@@ -1,5 +1,5 @@
 // Initialize the AngularJS module
-var app = angular.module("myApp", ["ngRoute"]);
+var app = angular.module("app", ["ngRoute"]);
 
 // Configure the routing
 app.config(function ($routeProvider, $locationProvider) {
