@@ -8,10 +8,24 @@ angular
       { title: "About", link: "/about" },
       { title: "Careers", link: "/careers" },
     ];
-    console.log($scope.isLoggedIn);
-    if ($scope.isLoggedIn) {
-      $scope.accountItem = { title: "Account", link: "/account" };
-    } else {
-      $scope.accountItem = { title: "Login", link: "/login" };
+
+    $scope.$watch(
+      function () {
+        return AuthService.isLoggedIn();
+      },
+      function (newValue, oldValue) {
+        if (newValue !== oldValue) {
+          $scope.isLoggedIn = newValue;
+          updateAccountItem();
+        }
+      }
+    );
+    function updateAccountItem() {
+      if ($scope.isLoggedIn) {
+        $scope.accountItem = { title: "Account", link: "/account" };
+      } else {
+        $scope.accountItem = { title: "Login", link: "/login" };
+      }
     }
+    updateAccountItem();
   });

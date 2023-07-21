@@ -5,6 +5,7 @@ angular
       email: "",
       password: "",
     };
+    $scope.rememberMe = false;
 
     $scope.login = function () {
       $http({
@@ -22,12 +23,7 @@ angular
       })
         .then(function (response) {
           console.log("Login successful!", response);
-          AuthService.setUser({
-            email: $scope.user.email,
-            access_token: response.headers("access-token"),
-            client: response.headers("client"),
-            uid: response.headers("uid"),
-          });
+          AuthService.setUser(response.data.user, $scope.rememberMe);
           // Redirect the user
         })
         .catch(function (error) {
