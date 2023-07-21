@@ -8,9 +8,13 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: "app/views/home.html",
       controller: "HomeController",
     })
+    .when("/login", {
+      templateUrl: "app/views/login.html",
+    })
     .when("/under-construction", {
       templateUrl: "views/under-construction.html",
     })
+
     .otherwise({
       redirectTo: "/under-construction", // Redirect to the under-construction page if URL doesn't match any defined route
     });
