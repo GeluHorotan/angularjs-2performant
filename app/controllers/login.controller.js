@@ -1,33 +1,36 @@
 angular
   .module("app")
-  .controller("LoginController", function ($scope, $http, AuthService) {
-    $scope.user = {
-      email: "",
-      password: "",
-    };
-    $scope.rememberMe = false;
+  .controller(
+    "LoginController",
+    function ($scope, $http, AuthService, $location) {
+      $scope.user = {
+        email: "",
+        password: "",
+      };
+      $scope.rememberMe = false;
 
-    $scope.login = function () {
-      $http({
-        method: "POST",
-        url: "http://localhost:5000/api/users/sign_in.json",
-        data: {
-          user: {
-            email: $scope.user.email,
-            password: $scope.user.password,
+      $scope.login = function () {
+        $http({
+          method: "POST",
+          url: "http://localhost:5000/api/users/sign_in.json",
+          data: {
+            user: {
+              email: $scope.user.email,
+              password: $scope.user.password,
+            },
           },
-        },
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then(function (response) {
-          console.log("Login successful!", response);
-          AuthService.setUser(response.data.user, $scope.rememberMe);
-          // Redirect the user
+          headers: {
+            "Content-Type": "application/json",
+          },
         })
-        .catch(function (error) {
-          console.error("Login failed!", error);
-        });
-    };
-  });
+          .then(function (response) {
+            console.log("Login successful!", response);
+            AuthService.setUser(response.data.user, $scope.rememberMe);
+            $location.path("/account");
+          })
+          .catch(function (error) {
+            console.error("Login failed!", error);
+          });
+      };
+    }
+  );

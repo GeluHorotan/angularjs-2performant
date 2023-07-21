@@ -1,0 +1,50 @@
+<div ng-controller="AccountController" class="flex justify-center items-center">
+  <div
+    class="p-20 bg-red-400 rounded-xl flex items-center justify-center flex-col gap-8"
+  >
+    <h1>Account</h1>
+    <img ng-src="{{ user.avatar_url }}" class="rounded-xl" alt="User Image" />
+    <!-- <p class="text-xl">
+      Logged in as <span class="font-semibold">{{user.name}}</span>
+    </p> -->
+    <div class="flex gap-2 items-center justify-center">
+      <i class="fas fa-user"></i>
+      <p>{{user.login}}</p>
+    </div>
+
+    <div class="flex gap-2 items-center justify-center">
+      <i class="fas fa-envelope"></i>
+      <p>{{user.email}}</p>
+    </div>
+
+    <div class="flex items-center justify-between w-full">
+      <div class="flex gap-2 items-center justify-center">
+        <i class="fas fa-flag"></i>
+        <p class="uppercase">{{user.role}}</p>
+      </div>
+      <div class="flex gap-2 items-center justify-center">
+        <i class="fas fa-location-arrow"></i>
+        <p>{{user.user_info.country}}</p>
+      </div>
+    </div>
+    <div class="flex gap-2 items-center justify-center">
+      <i class="fas fa-calendar-plus"></i>
+      <p>
+        Created on
+        <span class="font-semibold"
+          >{{ user.created_at | date:'MMM d yyyy' }}</span
+        >
+        at
+        <span class="font-semibold">{{ user.created_at | date:'h:mm a' }}</span>
+      </p>
+    </div>
+
+    <button
+      ng-click="logout()"
+      class="w-max h-max px-4 py-1 bg-blue-400 rounded-lg text-white"
+    >
+      Logout
+    </button>
+    <!-- <i class="fas fa-user"></i> -->
+  </div>
+</div>
