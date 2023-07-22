@@ -23,6 +23,10 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: "app/views/404.html",
       controller: "404Controller",
     })
+    .when("/under-construction", {
+      templateUrl: "app/views/under-construction.html",
+      controller: "UnderConstructionController",
+    })
 
     .otherwise({
       redirectTo: "/404",
