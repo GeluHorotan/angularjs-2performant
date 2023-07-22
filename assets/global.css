@@ -1,5 +1,21 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-image: url("circle-background.svg");
+  background-size: cover;
+  background-position: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.txt-primary {
+  color: white;
+}
+.txt-primary:hover {
+  color: #001220;
+}
+.background-primary {
+  background-color: #001220;
 }
 
 li {

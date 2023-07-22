@@ -1,18 +1,18 @@
 <nav class="px-14 py-4 fixed w-full">
-  <ul class="flex items-center justify-between uppercase">
-    <li class="hover:text-red-400 duration-200 ease-in-out transition-all">
+  <ul class="flex items-center justify-between uppercase text-white">
+    <li class="hover:text-yellow-400 duration-200 ease-in-out transition-all">
       <a href="/">Angular.JS {{angularVersion}}</a>
     </li>
     <div class="flex gap-40">
       <div class="flex gap-12">
         <li
           ng-repeat="item in navItems"
-          class="hover:text-red-400 duration-200 ease-in-out transition-all"
+          class="hover:text-yellow-400 duration-200 ease-in-out transition-all"
         >
           <a ng-href="{{ item.link }}">{{ item.title }}</a>
         </li>
       </div>
-      <li class="hover:text-red-400 duration-200 ease-in-out transition-all">
+      <li class="hover:text-yellow-400 duration-200 ease-in-out transition-all">
         <a ng-href="{{accountItem.link}}">{{accountItem.title}}</a>
       </li>
     </div>
