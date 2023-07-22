@@ -28,4 +28,15 @@ angular
       }
     }
     updateAccountItem();
+
+    // Sidebar
+    $scope.showSidebar = false;
+    $scope.toggleSidebar = function () {
+      $scope.showSidebar = !$scope.showSidebar;
+    };
+    $scope.closeSidebar = function () {
+      if ($scope.showSidebar) {
+        $scope.toggleSidebar();
+      }
+    };
   });
