@@ -10,6 +10,7 @@ app.config(function ($routeProvider, $locationProvider) {
     })
     .when("/login", {
       templateUrl: "app/views/login.html",
+      controller: "LoginController",
     })
     .when("/account", {
       templateUrl: "app/views/account.html",
@@ -18,9 +19,13 @@ app.config(function ($routeProvider, $locationProvider) {
     .when("/under-construction", {
       templateUrl: "views/under-construction.html",
     })
+    .when("/404", {
+      templateUrl: "app/views/404.html",
+      controller: "404Controller",
+    })
 
     .otherwise({
-      redirectTo: "/under-construction", // Redirect to the under-construction page if URL doesn't match any defined route
+      redirectTo: "/404",
     });
 
   $locationProvider.html5Mode(true);

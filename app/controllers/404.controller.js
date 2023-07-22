@@ -1,13 +1,20 @@
 angular
   .module("app")
-  .controller("404Controller", function ($scope, $location, $timeout) {
-    $scope.goHome = function () {
-      $location.path("/");
-    };
+  .controller("404Controller", function ($scope, $location, $interval) {
+    $scope.remainingSeconds = 10;
 
-    var timerPromise = $timeout($scope.goHome, 10000);
+    function countdown() {
+      if ($scope.remainingSeconds > 0) {
+        $scope.remainingSeconds--;
+      } else {
+        $location.path("/");
+      }
+    }
+    var timer = $interval(countdown, 1000);
 
     $scope.$on("$destroy", function () {
-      $timeout.cancel(timerPromise);
+      if (timer) {
+        $interval.cancel(timer);
+      }
     });
   });
