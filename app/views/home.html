@@ -1,14 +1,27 @@
 <div
-  class="h-screen w-full items-start justify-center w-full flex flex-col text-white"
+  class="h-screen w-full items-start justify-center w-full flex flex-col text-white gap-8"
 >
-  <rect x="0" y="0" width="900" height="600" fill="#001220"></rect>
-  <g transform="translate(482.52833714800414 321.983926669723)">
-    <path
-      d="M199.3 -250.5C237.8 -205.1 234.6 -123 227.8 -55.8C221 11.3 210.5 63.4 188.2 115C166 166.6 131.9 217.7 83.5 239.8C35.1 261.9 -27.6 255 -71 225.8C-114.3 196.6 -138.4 145.2 -183.5 93.2C-228.7 41.3 -295.1 -11.2 -297 -61.5C-299 -111.7 -236.6 -159.6 -176.4 -201.2C-116.1 -242.7 -58.1 -277.9 11.1 -291.1C80.3 -304.4 160.7 -295.8 199.3 -250.5"
-      fill="#000509"
-    ></path>
-  </g>
-
-  <h1>2Performant</h1>
-  <h6>DEDICATED TO MARKETING SUPERHEROES</h6>
+  <div class="flex flex-col gap-2">
+    <h1>2Performant</h1>
+    <h6>DEDICATED TO MARKETING SUPERHEROES</h6>
+  </div>
+  <div class="flex gap-4">
+    <button
+      class="px-4 py-2 bg-pink-600 text-white rounded-lg transition-all duration-200 ease-in-out"
+    >
+      <a href="/under-construction">CAREERS</a>
+    </button>
+    <button
+      ng-if="!isLoggedIn"
+      class="px-4 py-2 text-white rounded-lg border-2 border-pink-600 transition-all duration-200 ease-in-out"
+    >
+      <a href="/login">LOGIN</a>
+    </button>
+    <button
+      ng-if="isLoggedIn"
+      class="px-4 py-2 text-white rounded-lg border-2 border-pink-600 transition-all duration-200 ease-in-out"
+    >
+      <a href="/login">ACCOUNT</a>
+    </button>
+  </div>
 </div>

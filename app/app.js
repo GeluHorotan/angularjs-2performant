@@ -34,3 +34,18 @@ app.config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
 });
+
+angular.module("app").run(function ($rootScope, $location, AuthService) {
+  $rootScope.$on("$routeChangeStart", function (event, next, current) {
+    if (next.$$route.originalPath === "/login" && AuthService.isLoggedIn()) {
+      event.preventDefault();
+      $location.path("/account");
+    } else if (
+      next.$$route.originalPath === "/account" &&
+      !AuthService.isLoggedIn()
+    ) {
+      event.preventDefault();
+      $location.path("/login");
+    }
+  });
+});
