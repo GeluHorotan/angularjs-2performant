@@ -24,13 +24,20 @@ angular
           },
         })
           .then(function (response) {
-            console.log("Login successful!", response);
             AuthService.setUser(response.data.user, $scope.rememberMe);
             $location.path("/account");
           })
           .catch(function (error) {
-            console.error("Login failed!", error);
+            var errorArray =
+              error.data.errors && Array.isArray(error.data.errors)
+                ? error.data.errors
+                : ["An error occurred"];
+
+            AuthService.setErrors(errorArray);
           });
+      };
+      $scope.getErrors = function () {
+        return AuthService.getErrors();
       };
     }
   );

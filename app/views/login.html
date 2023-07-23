@@ -7,6 +7,11 @@
   >
     <h1 class="text-3xl font-bold">Login</h1>
     <form ng-submit="login()" class="flex flex-col gap-4">
+      <div class="error" ng-show="getErrors().length > 0">
+        <p class="text-red-400" ng-repeat="error in getErrors()">
+          {{ error.title }}
+        </p>
+      </div>
       <label class="text-xl">Email:</label>
       <input
         type="email"

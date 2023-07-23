@@ -3,6 +3,7 @@ angular.module("app").factory("AuthService", function () {
     user: null,
     rememberMe: false,
   };
+  var errors = [];
 
   function saveUserState() {
     var storage = userState.rememberMe ? localStorage : sessionStorage;
@@ -46,6 +47,15 @@ angular.module("app").factory("AuthService", function () {
     logout: function () {
       userState.user = null;
       clearUserState();
+    },
+    getErrors: function () {
+      return errors;
+    },
+    setErrors: function (errorArr) {
+      errors = errorArr;
+    },
+    clearErrors: function () {
+      errors = [];
     },
     loadState: loadUserState,
     clearState: clearUserState,
