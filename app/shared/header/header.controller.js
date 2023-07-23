@@ -6,7 +6,7 @@ angular
     $scope.navItems = [
       { title: "Home", link: "/" },
       { title: "About", link: "/about" },
-      { title: "Careers", link: "/under-construction" },
+      { title: "Careers", link: "/careers" },
     ];
 
     $scope.$watch(
